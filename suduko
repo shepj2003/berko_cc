@@ -34,7 +34,7 @@ class Puzzle :
         return self._display2()
                 
     def _display2(self) :
-        strg = ''
+        strg = "\n"
         for i in range(81) :
             if len(self.vals[i]) == 1:
                 v = self.vals[i]
