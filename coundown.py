@@ -9,14 +9,21 @@
 import itertools
 
 def add(a,b) :
-    return a+b
+    ## returns the sum of a & b
+    ## FIXME
+    return -1
 
 def subtract(a,b) :
-    return a-b
-    
+    ## returns the difference between a & b
+    ## FIXME
+    return -1
+
 def mult(a,b) : 
-    return a*b
-    
+    ##returns the product of a & b
+    ## FIXME
+    return -1
+	
+	
 def divide(a,b) :
     if a%b :
         return a/(1.0*b)
