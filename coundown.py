@@ -90,6 +90,7 @@ def expressions( l ) :
             for o in operators :
                 for e in expressions(l[:i] + l[i+1:]) : 
                     yield BExpr(o, TExpr(x), e)
+		    yield BExpr(o, e, TExpr(x))
 
 def target_expressions(target, l) :
     for x in expressions(l) :
@@ -107,5 +108,9 @@ def test_cases():
     print_expressions(952,[25, 50,75,100,3,6])
     print_expressions(431,[25, 50,75,50,8,2])
     print_expressions(724,[12,87,8,3,4,8])
+    print_expressions(940, [75,50,25,100,2,1])
+    print_expressions(974,[100,50,75,25,1,3])
+    print_expressions(278,[100,50,75,25,1,8])
+    print_expressions (924,[5,3,9,2,7,1])
         
  
