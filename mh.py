@@ -37,10 +37,11 @@ def one_sim(strategy) :
 			
 	if set( contestant ) == set(car):
 		print ( "you win ... YEAH" )
-		return 1
+
 	else :
 		print ( "you lose .... BOO" )
-		return 0
+
+
 
 def go(strategy) : 
 	wins = 0
@@ -49,7 +50,6 @@ def go(strategy) :
 		## TODO here we are playing the game many time
 		## every time we win we want to add the result of the game  to the wins variable 
 		## so we can keep track 
-		wins = wins + result
 
 	print (" you played %d times and won %d times "%(simulations, wins))
 	print (" a success rate of %f  "%(100.0*wins/simulations))
