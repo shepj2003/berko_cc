@@ -77,7 +77,13 @@ figure = plt.figure(figsize=(40, 20))
 i = 1
 # iterate over datasets
 for ds_cnt, ds in enumerate(datasets):
-    # preprocess dataset, split into training and test part
+    #### 
+    #### pre-process the data
+    #### split into training and test part
+    #### test_size tells us what fraction to use for testing
+    #### the rest is used for training
+    #### test_size needs to be between 0 and 1
+    #### do we get a better score if we use more or less for training     
     X, y = ds
     X = StandardScaler().fit_transform(X)
     X_train, X_test, y_train, y_test = \
@@ -92,6 +98,11 @@ for ds_cnt, ds in enumerate(datasets):
     #### https://matplotlib.org/users/colormaps.html
     #### try eg Dark2, plasma, Set1
     cm = plt.cm.RdBu
+    ####
+    #### this tells us whatcolour to make the inputs 
+    #### ff0000 is red 0000ff is blue
+    #### try different values
+    ####     
     cm_bright = ListedColormap(['#FF0000', '#0000FF'])
     ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
     if ds_cnt == 0:
@@ -112,6 +123,12 @@ for ds_cnt, ds in enumerate(datasets):
     for name, clf in zip(names, classifiers):
         ax = plt.subplot(len(datasets), len(classifiers) + 1, i)
         clf.fit(X_train, y_train)
+        ####
+        #### score tells us how well we did on the test data
+        #### 1 is perfect and 0 is terrible
+        #### try to find the classifier that gets the highest score
+        #### over all 3 data sets
+        #### the score will appear in the bottom right of each picture
         score = clf.score(X_test, y_test)
 
         # Plot the decision boundary. For that, we will assign a color to each
