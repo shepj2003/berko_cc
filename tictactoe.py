@@ -58,11 +58,11 @@ def game_ended( grid ):
     return (0, None)
 
 def switch_curr_player(curr_player) : 
-    """"
+    """
         switch the player so that both players get a go
         if curr_player is 1 then return -1
         if curr_player is -1 then return 1
-    """"
+    """
     return -1*curr_player
 
 def play() : 
