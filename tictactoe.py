@@ -65,7 +65,7 @@ def print_grid( grid) :
         gstr += "|".join( [PLAYER[ x ]   for x in col ] )
         ## TODO :: add a newline to the gstr to make each row appear on a separate line
         ## new line is "\n"
-        gstr +="\n"
+        
         gstr += "-----\n"
     print (gstr)
 
@@ -107,4 +107,8 @@ def play() :
     if state == 2 :
         print ( "game ends in a draw" )
     if state == 1 : 
+    ## TODO
+    ## python cares a lot about space at the beginning of lines
+    ## make sure that the line below is indented so that the print statement is directly below 
+    ## the print statement just above
         print ( "player {:s} is the winner".format( PLAYER[winner]) )
