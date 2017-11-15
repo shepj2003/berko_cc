@@ -1,4 +1,6 @@
 
+
+
 LMR = { 'L' : 0, 'M': 1, 'R' : 2}
 TMB = { 'T' : 0, 'M' : 1, 'B' : 2}
 PLAYER = { 1 : 'X', -1 : 'O', 0 : ' '}
@@ -21,6 +23,7 @@ def update_grid( grid, player, move) :
     if a valid move is played then update the grid and return 1
     if the move is invalid then print out some help and return 0
     """
+    
     if ( move[1] not in LMR.keys() )  or ( move[0] not in TMB.keys() ) :
         print ("moves consist of 2 characters")
         print ("first character should be one of T(op),M(iddle), B(ottom)")
@@ -95,14 +98,91 @@ def switch_curr_player(curr_player) :
     ## TODO :: fix the return value below
     return 0
 
+def cpu_algo1(grid, player) :
+    good_move = False
+    n = len(grid)
+    while good_move == False :
+        x = np.random.randint(n)
+        y = np.random.randint(n)
+        if grid[x,y] == 0 :
+            grid[x,y] = player
+            good_move = True
+    return 1
+
+def cpu_algo2 ( grid, player) : 
+    good_move = False
+    n = len(grid)
+    z = 0
+    while good_move == False :
+        x = z%n
+        y = int ( ( z - x)/n )
+        if grid[x,y] == 0 :
+            grid[x,y] = player
+            good_move = True
+        z +=1
+    return 1
+
+def cpu_algo3 (grid, player) :
+    #### TODO 4
+    ## write your own algorithm
+    ## you need to find a way to chose x & y
+    ## you need to check that grid[x,y] is currently empty for it to be a valid move
+    x = None
+    y = None
+    grid[x,y] = player
+    return 1
+    
+def choose_cpu_algo( player ) : 
+    #### TODO 3
+    ## we have defined 2 different algorithms for the computer to decide where to play
+    ## they are called cpu_algo1 and cpu_algo2
+    ## change the lines below to control which algorithm to use
+    ## this code only has any effect when the player is controlled by the CPU
+    ## (see TODO2)
+    ## try tofind out which algo is better
+    ## if both players use the same algorithm, can you work out which player will win.
+    ## is it always the same
+    if player == 1 :
+        algo = cpu_algo1
+    if player == -1 :
+        algo = cpu_algo1
+    return algo
+    
+    
+def human_move( grid, player) : 
+    good_move = 0
+    while good_move == 0 :
+        loc = input( "player {:s} , where do you want to play ... ?".format( PLAYER[player]) )
+        good_move = update_grid( grid, player, loc) 
+    return 1
+
+def player_is_human(player) : 
+    #### TODO 2
+    ## once you have managed to get 2 humans to play vs eachother 
+    ## try to play one human vs one computer 
+    ## or 2 computers vs eachother
+    ## you need to modify the lines below to control
+    ## whether player 1 is human and/or player 2 is human
+    if player == -1 :
+        return True
+    if player == 1 : 
+        return True
+    
+def move( grid, player) : 
+    if player_is_human(player) :
+        return human_move( grid, player)
+    else :
+        algo = choose_cpu_algo( player )
+        return algo(grid,player)
+    
 def play() : 
     grid = init_grid(3)
     curr_player = 1
+    print_grid(grid)
     while not game_ended(grid)[0]: 
+        move( grid, curr_player)
         print_grid(grid)
-        loc = input( "player {:s} , where do you want to play ... ?".format( PLAYER[curr_player]) )
-        if update_grid( grid, curr_player, loc) : 
-            curr_player = switch_curr_player(curr_player)
+        curr_player = switch_curr_player(curr_player)
     state, winner = game_ended(grid)
     if state == 2 :
         print ( "game ends in a draw" )
