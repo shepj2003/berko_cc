@@ -1,5 +1,4 @@
 
-
 import numpy as np
 
 LMR = { 'L' : 0, 'M': 1, 'R' : 2}
@@ -117,6 +116,66 @@ def cpu_algo2 ( grid, player) :
         z +=1
     return 1
 
+def score(x, y, grid, player, f) : 
+    score = 0
+    n = len(grid)
+    g = grid.copy()
+    if g[x,y] == 0 :
+        g[x,y] = player
+    score = score + f ( sum( g[x,:] ) )    + f ( sum ( g[:,y] ) )  
+    if x==y :
+        score += f ( sum([ g[i,i] for i in range( n ) ] ) )
+    if x==n-1-y : 
+        score += f ( sum([ g[i,n-1-i]  for i in range( n ) ] ) )
+    return score
+
+def cpu_first_move(grid,player) : 
+    return cpu_algo1(grid, player)
+
+def is_first_move( grid, player) : 
+    return np.abs( grid ).sum() == 0 
+
+def cpu_algo_aggressive( grid, player) :
+    return cpu_algo_agressive_defensive( grid, player, "cpu_aggressive")
+
+def cpu_algo_defensive( grid, player) :
+    return cpu_algo_agressive_defensive( grid,player, "cpu_defensive")
+
+def cpu_algo_aggressive_defensive( grid, player, algo) : 
+    
+    if is_first_move(grid, player) :
+        return cpu_first_move(grid, player)
+        
+    n = len(grid)
+        
+    if algo == "cpu_defensive" :
+        player_to_test = -1 * player
+    else :
+        player_to_test = player
+    move_scores = [(x, y, score(x,y,grid, player_to_test, lambda x : x*x*x)) for x in range( n ) for y in range( n )]
+    if player ==1 : 
+        sort_reducing = True
+    else :
+        sort_reducing = False
+    
+    if algo == "cpu_defensive" :
+        sort_reducing = not sort_reducing 
+        
+    move_scores.sort(key=lambda x: x[2], reverse = sort_reducing)
+    
+    #print ( "in {}".format( algo ))
+    #print ( "playing as player {}".format(player))
+    #print ( move_scores )
+    legal_move = False
+    for x,y, s in move_scores :
+        if grid[x,y] == 0 :
+            legal_move = True
+            grid[x,y] = player
+            break
+    return 1
+    
+    
+
 def cpu_algo3 (grid, player) :
     #### TODO 4
     ## write your own algorithm
@@ -129,12 +188,16 @@ def cpu_algo3 (grid, player) :
     
 def choose_cpu_algo( player ) : 
     #### TODO 3
-    ## we have defined 2 different algorithms for the computer to decide where to play
-    ## they are called cpu_algo1 and cpu_algo2
+    ## we have defined 4 different algorithms for the computer to decide where to play
+    ## they are called 
+    ##     cpu_algo1
+    ##     cpu_algo2
+    ##     cpu_algo_aggressive
+    ##     cpu_algo_defensive
     ## change the lines below to control which algorithm to use
     ## this code only has any effect when the player is controlled by the CPU
     ## (see TODO2)
-    ## try tofind out which algo is better
+    ## try to find out which algos are best
     ## if both players use the same algorithm, can you work out which player will win.
     ## is it always the same
     if player == 1 :
@@ -183,3 +246,4 @@ def play() :
         print ( "game ends in a draw" )
     if state == 1 : 
         print ( "player {:s} is the winner".format( PLAYER[winner]) )
+        
