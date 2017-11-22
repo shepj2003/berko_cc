@@ -1,5 +1,6 @@
 
 
+import numpy as np
 
 LMR = { 'L' : 0, 'M': 1, 'R' : 2}
 TMB = { 'T' : 0, 'M' : 1, 'B' : 2}
@@ -33,12 +34,8 @@ def update_grid( grid, player, move) :
     y = LMR[ move[1] ]
     x = TMB[ move[0] ]
     if grid[x,y] == 0 :
-        ## TODO
-        ## this is a valid move so we need to update the grid
-        ## we have discovered that we need to update the point grid[x,y]
-        ## and we need to make it equal to player so we remember who went here
-        ## change the line below to update the value of grid[x,y] ..otherwise the game will never end
-        grid[x,y] = 0
+        
+        grid[x,y] = player
         return 1 
     
     ## if we get here then it means that it was not a valid move 
@@ -66,9 +63,7 @@ def print_grid( grid) :
     gstr = ''
     for col in grid : 
         gstr += "|".join( [PLAYER[ x ]   for x in col ] )
-        ## TODO :: add a newline to the gstr to make each row appear on a separate line
-        ## new line is "\n"
-        
+        gstr += "\n"    
         gstr += "-----\n"
     print (gstr)
 
@@ -95,8 +90,8 @@ def switch_curr_player(curr_player) :
         if curr_player is 1 then return -1
         if curr_player is -1 then return 1
     """
-    ## TODO :: fix the return value below
-    return 0
+   
+    return -1*curr_player
 
 def cpu_algo1(grid, player) :
     good_move = False
@@ -187,8 +182,4 @@ def play() :
     if state == 2 :
         print ( "game ends in a draw" )
     if state == 1 : 
-    ## TODO
-    ## python cares a lot about space at the beginning of lines
-    ## make sure that the line below is indented so that the print statement is directly below 
-    ## the print statement just above
         print ( "player {:s} is the winner".format( PLAYER[winner]) )
