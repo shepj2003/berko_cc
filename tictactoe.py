@@ -136,10 +136,10 @@ def is_first_move( grid, player) :
     return np.abs( grid ).sum() == 0 
 
 def cpu_algo_aggressive( grid, player) :
-    return cpu_algo_agressive_defensive( grid, player, "cpu_aggressive")
+    return cpu_algo_aggressive_defensive( grid, player, "cpu_aggressive")
 
 def cpu_algo_defensive( grid, player) :
-    return cpu_algo_agressive_defensive( grid,player, "cpu_defensive")
+    return cpu_algo_aggressive_defensive( grid,player, "cpu_defensive")
 
 def cpu_algo_aggressive_defensive( grid, player, algo) : 
     
