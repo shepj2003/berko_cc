@@ -4,6 +4,9 @@ import numpy as np
 LMR = { 'L' : 0, 'M': 1, 'R' : 2}
 TMB = { 'T' : 0, 'M' : 1, 'B' : 2}
 PLAYER = { 1 : 'X', -1 : 'O', 0 : ' '}
+algo_X = cpu_algo1
+algo_O = cpu_algo2
+SHOW_GRID = True
 
 def init_grid( n ) :
     """
@@ -59,6 +62,9 @@ def print_grid( grid) :
     followed by a new-line
     then add a line of --- to separate rows
     """
+    if not SHOW_GRID:
+        return 
+    
     gstr = ''
     for col in grid : 
         gstr += "|".join( [PLAYER[ x ]   for x in col ] )
@@ -73,15 +79,24 @@ def game_ended( grid ):
     state = 1 => somebody has won, winner = +/- 1
     state = 2 => game has ended in a draw, winnder is N/A
     """
-    if 0 not in grid : 
-        return (2, None)
-    l = check_lines( grid )
     n = len(grid)
-    if n in l : 
-        return (1, 1)
-    if -n in l : 
-        return (1, -1)
-    return (0, None)
+    l = range(n)
+    r = [sum( grid[x,:]) for x in l]
+    c = [sum( grid[:,x]) for x in l]
+    d1 = sum([grid[x,x] for x in l])
+    d2 = sum([grid[x,2-x] for x in l])
+    all_lines = r + c + [d1,d2]
+         
+    if n in all_lines:
+         return(1,1)
+    if -n in all_lines :
+         return (1,-1)
+    
+    if 0 in grid :
+         return(0, None)
+    
+    return (2, None)
+    
 
 def switch_curr_player(curr_player) : 
     """
@@ -201,9 +216,9 @@ def choose_cpu_algo( player ) :
     ## if both players use the same algorithm, can you work out which player will win.
     ## is it always the same
     if player == 1 :
-        algo = cpu_algo1
+        algo = algo_X
     if player == -1 :
-        algo = cpu_algo1
+        algo = algo_O
     return algo
     
     
@@ -222,9 +237,9 @@ def player_is_human(player) :
     ## you need to modify the lines below to control
     ## whether player 1 is human and/or player 2 is human
     if player == -1 :
-        return True
+        return False
     if player == 1 : 
-        return True
+        return False
     
 def move( grid, player) : 
     if player_is_human(player) :
@@ -243,7 +258,35 @@ def play() :
         curr_player = switch_curr_player(curr_player)
     state, winner = game_ended(grid)
     if state == 2 :
-        print ( "game ends in a draw" )
+        if SHOW_GRID:
+            print ( "game ends in a draw" )
+        return 0
     if state == 1 : 
-        print ( "player {:s} is the winner".format( PLAYER[winner]) )
+        if SHOW_GRID :
+            print ( "player {:s} is the winner".format( PLAYER[winner]) )
+        return winner
         
+    
+        
+
+def simulate(n, algo_x=cpu_algo1, algo_o = cpu_algo2, show_steps=True) :
+    global algo_X, algo_O, SHOW_GRID
+    algo_X = algo_x
+    algo_O = algo_o
+    SHOW_GRID = show_steps
+    
+    scores = {'draw' : 0, 'X' : 0, 'O' : 0}
+    for i in range( n ) :
+        res = play()
+        if res ==0 :
+            scores['draw'] +=1
+        elif res ==1 :
+            scores['X'] +=1
+        elif res ==-1 :
+            scores['O'] +=1
+            
+    print(scores)
+    
+    
+    
+
