@@ -75,6 +75,13 @@ class Code( object):
     def set_letter(self,  letter, code_for_letter) : 
         self.code_map[letter] = code_for_letter
         self.decode_map = {v:k for k,v in self.code_map.items()}
+        
+    def swap( self, a, b) : 
+        tmp = self.code_map[a]
+        self.code_map[a] = self.code_map[b]
+        self.code_map[b] = tmp
+        self.decode_map = {v:k for k,v in self.code_map.items()}
+
 
     @classmethod
     def encode_core(cl, sentence, code_map):
