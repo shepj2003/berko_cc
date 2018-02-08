@@ -143,6 +143,37 @@ Main article: Dissolution of the Monasteries
 
 The king had an annual income of about £100,000, but he needed much more in order to suppress rebellions and finance his foreign adventures. In 1533, for example, military expenditures on the northern border cost £25,000, while the 1534 rebellion in Ireland cost £38,000. Suppressing the Pilgrimage of Grace cost £50,000, and the king's new palaces were expensive. Meanwhile, customs revenue was slipping. The Church had an annual revenue of about £300,000; a new tax of 10% was imposed which brought in about £30,000. To get even larger sums it was proposed to seize the lands owned by monasteries, some of which the monks farmed and most of which was leased to local gentry. Taking ownership meant the rents went to the king. Selling the land to the gentry at a bargain price brought in £1 million in one-time revenue and gave the gentry a stake in the administration.[26] The clerical payments from First Fruits and Tenths, which previously went to the pope, now went to the king. Altogether, between 1536 and Henry's death, his government collected £1.3 million; this huge influx of money caused Cromwell to change the Crown's financial system to manage the money. He created a new department of state and a new official to collect the proceeds of the dissolution and the First Fruits and Tenths. The Court of Augmentations and number of departments meant a growing number of officials, which made the management of revenue a major activity.[27] Cromwell's new system was highly efficient with far less corruption or secret payoffs or bribery than before. Its drawback was the multiplication of departments whose sole unifying agent was Cromwell; his fall caused confusion and uncertainty; the solution was even greater reliance on bureaucratic institutions and the new Privy Council"""
 
+barcelona = """Barcelona es una ciudad española, capital de la comunidad autónoma de Cataluña, de la comarca del Barcelonés y de la provincia homónima.
+
+Con una población de 1 620 809 habitantes en 2017,5​ es la segunda ciudad más poblada de España después de Madrid, y la undécima de la Unión Europea. El área metropolitana de Barcelona, incluida en el ámbito metropolitano de Barcelona, cuenta con 5 029 181 habitantes (2011), siendo así la sexta ciudad de mayor población de la Unión Europea.6​7​
+
+Creo que el código club fue divertido hoy
+
+Se ubica a orillas del mar Mediterráneo, a unos 120 km al sur de la cadena montañosa de los Pirineos y de la frontera con Francia, en un pequeño llano litoral limitado por el mar al este, la sierra de Collserola al oeste, el río Llobregat al sur y el río Besós al norte. Por haber sido capital del condado de Barcelona, se suele aludir a ella con la denominación antonomástica de Ciudad Condal.
+
+La historia de Barcelona se extiende a lo largo de 4000 años, desde finales del Neolítico, con los primeros restos hallados en el territorio de la ciudad, hasta la actualidad. El sustrato de sus habitantes aúna a los pueblos íberos, romanos, judíos, visigodos, musulmanes y cristianos. Como capital de Cataluña y segunda ciudad en importancia de España, la Ciudad Condal ha forjado su relevancia con el tiempo, desde ser una pequeña colonia romana hasta convertirse en una ciudad valorada internacionalmente por aspectos como su economía, su patrimonio artístico, su cultura, su deporte y su vida social.
+
+Barcelona ha sido escenario de diversos acontecimientos internacionales que han contribuido a consolidarla, desarrollarla y darle proyección mundial. Los más relevantes han sido la Exposición Universal de 1888, la Exposición Internacional de 1929, los Juegos Olímpicos de 1992 y el Fórum Universal de las Culturas 2004. Es también sede del secretariado de la Unión para el Mediterráneo.8​
+
+En la actualidad, Barcelona está reconocida como una ciudad global por su importancia cultural, financiera, comercial y turística. Posee uno de los puertos más importantes del Mediterráneo y es también un importante punto de comunicaciones entre España y Francia, debido a las conexiones por autopista y alta velocidad ferroviaria. El aeropuerto de Barcelona-El Prat, situado a 15 km del centro de la ciudad, fue utilizado por más de 37,5 millones de pasajeros en 2014"""
+
+madrid = """Madrid es un municipio y ciudad de España. La localidad, con categoría histórica de villa,9​ es la capital del Estado10​ y de la Comunidad de Madrid. También conocida como la Villa y Corte, es la ciudad más poblada del país, con 3 182 981 habitantes empadronados según datos del INE de 2017 mientras que, con la inclusión de su área metropolitana11​ la cifra de población asciende a 6 543 031 habitantes,11​ siendo así la tercera o cuarta área metropolitana de la Unión Europea, según la fuente, por detrás de las de París y Londres, y en algunas fuentes detrás también de la Región del Ruhr, así como la tercera ciudad más poblada de la Unión Europea, por detrás de Berlín y Londres.12​13​14​15​ Madrid ocupa el puesto nº 38 en la lista Economist Intelligence Unit de ciudades con mejor calidad de vida del mundo.16​
+
+La ciudad cuenta con un PIB nominal de 227 411 millones USD y un PIB per cápita nominal de 34 425 USD, lo que representa un PIB PPA per cápita de 40 720 USD,17​ siendo la 1.ª área metropolitana española en actividad económica; y la décima de Europa por detrás de: Londres, París, Rin-Ruhr, Ámsterdam, Milán, Bruselas, Moscú, Fráncfort del Meno y Munich. Madrid es también la ciudad española con más pernoctaciones hoteleras.18​
+
+Como capital del Estado, Madrid alberga las sedes del Gobierno, las Cortes Generales, ministerios, instituciones y organismos asociados, así como la residencia oficial de los reyes de España19​ y del presidente del Gobierno. En el plano económico, es la cuarta ciudad más rica de Europa, tras Londres, París y Moscú.20​ Para 2009, el 50,1 % de los ingresos de las 5000 principales empresas españolas son generados por sociedades con sede social en Madrid, que suponen un 31,8 % de ellas.21​ Es sede del 3.ª mayor mercado de valores de Europa,22​ y 2.ª en el ámbito iberoamericano (Latibex) y de varias de las más grandes corporaciones del mundo.23​24​ Es la 8.ª ciudad del mundo con mayor presencia de multinacionales, tras Pekín y por delante de Dubái, París y Nueva York.25​26​
+
+En el plano internacional acoge la sede central de la Organización Mundial del Turismo (OMT), perteneciente a la ONU, la sede de la Organización Internacional de Comisiones de Valores (OICV), la sede de la Secretaría General Iberoamericana (SEGIB), la sede de la Organización de Estados Iberoamericanos para la Educación, la Ciencia y la Cultura (OEI), la Organización Iberoamericana de Juventud (OIJ), y la sede de Public Interest Oversight Board (PIOB).27​ También alberga las principales instituciones internacionales reguladoras y difusoras del idioma español: la Comisión Permanente de la Asociación de Academias de la Lengua Española,28​ y sedes centrales de la Real Academia Española (RAE), del Instituto Cervantes y de la Fundación del Español Urgente (Fundéu). Madrid organiza ferias como FITUR, Madrid Fusión, ARCO, SIMO TCI, el Salón del Automóvil y la Cibeles Madrid Fashion Week.
+
+Es un influyente centro cultural y cuenta con museos de referencia internacional, entre los que destacan el Museo del Prado, el Museo Nacional Centro de Arte Reina Sofía, el Thyssen-Bornemisza y CaixaForum Madrid, que ocupan, respectivamente, el 12º, 18º, 67º y 80º puesto entre los museos más visitados del mundo.29​
+
+Los orígenes de la ciudad son objeto de revisión tras recientes hallazgos de enterramientos visigodos así como de restos que se remontan a los carpetanos o periodo prerromano. Las excavaciones arqueológicas también arrojan restos que se atribuyen al Madrid romano. Estos hallazgos de época visigoda han venido a confirmar que el posterior asentamiento fortificado musulmán de Maǧrīţ (del siglo IX) se había asentado sobre un vicus visigodo del siglo VII llamado Matrice o matriz, arroyo (AFI [maʤriːtˁ]).30​31​
+
+No sería hasta el siglo XI cuando Madrid fue incorporada a la Corona de Castilla, tras su conquista por Alfonso VI de León en 1083. Fue designada como sede de la Corte por el rey Felipe II en 1561, convirtiéndose en la primera capital permanente de la monarquía española. Desde el Renacimiento hasta la actualidad ha sido capital de España y sede del Gobierno y la administración del Estado salvo breves intervalos de tiempo: el primero de ellos entre los años de 1601 y 1606, cuando la capitalidad pasó a Valladolid; posteriormente, de 1729 a 1733, en el llamado lustro real, la corte se trasladó a Sevilla por decisión de Isabel de Farnesio, que buscaba cura para el estado depresivo de su esposo, el rey Felipe V;32​ también durante la Guerra de la Independencia la Junta Suprema Central, opuesta a José Bonaparte, se estableció en Sevilla, en 1808, y en 1810, como Consejo de Regencia, en Cádiz; finalmente, durante la Guerra Civil, aunque Madrid no dejase de ser la capital de la República conforme al artículo 5º de la Constitución española de 1931, el Gobierno republicano se trasladó en noviembre de 1936 a Valencia y a Barcelona en noviembre del año siguiente, hasta la caída de Cataluña en febrero de 1939, cuando una parte del Gobierno encabezada por su presidente, Juan Negrín, se trasladó a Alicante. El Gobierno del bando sublevado, por su parte, se estableció en Burgos y, tras finalizar la guerra, se fijó allí la capital hasta el 18 de octubre de 1939 que se volvió a trasladar a Madrid"""
+
+
+
+
 fm = FreqMap()
 my_code = Code()
 
@@ -152,3 +183,12 @@ code_words = secret_code.encode( ww2)
 secret = secret_code.encode( henryviii[4391:4431] )
 plain_english = ww2 + henryviii[:500] 
 my_code.use_freq_map(fm.freq_map( plain_english), fm.freq_map( code_words) )
+
+spanish_secret = secret_code.encode( barcelona[486:527] )
+coded_spanish = secret_code.encode( barcelona + madrid)
+plain_spanish = barcelona + madrid
+spanish_code = Code()
+spanish_code.use_freq_map(fm.freq_map( plain_spanish), fm.freq_map( coded_spanish) )
+
+
+
