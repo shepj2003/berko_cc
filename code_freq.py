@@ -125,7 +125,7 @@ Father of the Royal Navy
 
 Biographer J.J. Scarisbrick says that |Henry deserved his traditional title of 'Father of the English navy.'[12] It became his personal weapon, his plaything, his passion. He inherited seven small warships from his father, and added two dozen more by 1514. In addition to those build in England, he bought up Italian and Hanseatic warships. By March 1513, he proudly watched his fleet sail down the Thames under command of Sir Edmund Howard. It was the most powerful naval force to date in English history: 24 ships led by the 1600 ton "Henry Imperial"; the fleet carried 5000 combat marines and 3000 sailors. It forced the outnumbered French fleet back to its ports, took control of the English Channel, and blockaded Brest. Henry was the first king to organise the navy as a permanent force, with a permanent administrative and logistical structure, funded by tax revenue. His personal attention was concentrated on land, where he founded the royal dockyards, planted trees for shipbuilding, enacted laws for in land navigation, guarded the coastline with fortifications, set up a school for navigation and designated the roles of officers and sailors. He closely supervised the construction of all his warships and their guns, knowing their designs, speed, tonnage, armaments and battle tactics. He encouraged his naval architects, who perfected the Italian technique of mounting guns in the waist of the ship, thus lowering the centre of gravity and making it a better platform. He supervised the smallest details and enjoyed nothing more than presiding over the launching of a new ship.[13] He drained his treasury on military and naval affairs, diverting the revenues from new taxes and the sales of monastery lands.[14][15][16]
 
-I think eric claption is the best guitarist ever.
+I shot the sheriff but I did not shoot the deputy.
 
 Elton argues that Henry indeed build up the organisation and infrastructure of the Navy, but it was not a useful weapon for his style of warfare. It lacked a useful strategy. It did serve for defence against invasion, and for enhancing England's international prestige.[17]
 Cardinal Wolsey
@@ -180,7 +180,7 @@ my_code = Code()
 secret_code = Code()
 secret_code.randomize_code()
 code_words = secret_code.encode( ww2)
-secret = secret_code.encode( henryviii[4391:4439] )
+secret = secret_code.encode( henryviii[4391:4440] )
 plain_english = ww2 + henryviii[:500] 
 my_code.use_freq_map(fm.freq_map( plain_english), fm.freq_map( code_words) )
 
