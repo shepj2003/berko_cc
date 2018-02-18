@@ -1,3 +1,5 @@
+code_key = 20180222
+
 def code_simple( word, m, n) : 
   return ''.join( [chr(x+( m*(i%2) ) + ( n*((i+1)%2)) ) 
      for i, x in enumerate( [ord(x) for x in list(word) ] ) ] )
