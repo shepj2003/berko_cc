@@ -11,13 +11,7 @@ def code(words, m, n) :
       for i, x in enumerate( ord_word ) ] 
   return ''.join(code_word )
     
-def decode( coded_words, m, n) : 
-    return code( coded_words, -m, -n)
 
-x1 = """A long long time ago I can still remember how that music used to make me smile And I knew if I had my chance That I could make those people dance And maybe they'd be happy for a while"""
-x2 = """But February made me shiver With every paper Id deliver Bad news on the doorstep I couldnt take one more step"""
-x3 = """I cant remember if I cried When I read about his widowed bride But something touched me deep inside The day the music died"""
-x4 = """So bye bye Miss American Pie Drove my Chevy to the levee but the levee was dry And them good ole boys were drinking whiskey and rye Singing thisll be the day that I dieThisll be the day that I die"""
 
 x1code = "A LQNI NOPG TKMG CGQ K EAP UTKLN TEOEOBGR HQW TJAV OUUIE WSGD TQ OAME MG UMKLG CNF K MNGW IH K JAF OY CJAPCG VHCT I CQUND MCKG VHQSG REQPNE DCNEE APD MCYDE TJEBYF DE HCPRY FQR A WJINE"
 x2code = 'JVC NFJSDBAA NIEM UF TPJEFA FJCI FEFAA QIQMS JL LFTJEFA JBL VFFT PV CIM LPWSBUMQ J DWVTEVAC CBSF PVF NWSM BUMQ'
