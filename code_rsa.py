@@ -78,26 +78,24 @@ def generate_rsa_keys(p, q) :
     return {"private" : (n, d), "public" : (n, e)}
 
 
-def encrypt(c, public_key):
+def encrypt_core(c, public_key):
     n, e = public_key
-    o = ord(c)
-    o_cypher = pow(o, e) % n
-    return chr(o_cypher)
+    cypher = pow(c, e) % n
+    return cypher
 
-def encrypt_sentence(sentence, public_key) :
+def encrypt(sentence, public_key) :
     cc = []
     for c in list(sentence):
-        cc.append( encrypt( c, public_key) ) 
+        cc.append( chr( encrypt_core( ord(c) , public_key) ) )
     return ''.join( cc )
     
-def decrypt( c, private_key) : 
+def decrypt_core( c, private_key) : 
     n, d = private_key
-    o = ord(c)
-    o_decypher = pow(o,d) % n
-    return chr(o_decypher)
+    decypher = pow(c,d) % n
+    return decypher
 
-def decrypt_sentence( sentence, private_key) : 
+def decrypt( sentence, private_key) : 
     dc = []
     for c in list( sentence) :
-        dc.append( decrypt( c, private_key))
+        dc.append( chr ( decrypt_core( ord( c ) , private_key) ) )
     return ''.join( dc)
