@@ -36,5 +36,5 @@ X = -0.7453
 Y = 0.1127
 MAX_ITER = 500
 COLMAP = plt.cm.hsv
-## x = mandelbrot_data = mandelbrot(600, 600, (X-R,X+R ), (Y-R,Y+R),max_iter)
-plt.imshow( x, cmap=plt.cm.hsv) 
+## x = mandelbrot_data = mandelbrot(600, 600, (X-R,X+R ), (Y-R,Y+R),MAX_ITER)
+plt.imshow( x, cmap=COLMAP) 
