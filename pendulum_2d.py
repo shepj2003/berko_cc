@@ -1,3 +1,9 @@
+"""
+copied from matplotlib animation examples
+https://matplotlib.org/gallery/animation/double_pendulum_sgskip.html
+"""
+
+
 from numpy import sin, cos
 import numpy as np
 import matplotlib.pyplot as plt
@@ -5,6 +11,7 @@ import scipy.integrate as integrate
 import matplotlib.animation as animation
 from matplotlib.colors import cnames
 
+## need the line below tomake the animation work in jupyter
 %matplotlib nbagg
 
 G = 9.8  # acceleration due to gravity, in m/s^2
