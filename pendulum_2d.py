@@ -53,26 +53,53 @@ def derivs(state, t):
 
 # create a time array from 0..100 sampled at 0.05 second steps
 dt = 0.05
-t = np.arange(0.0, 20, dt)
+t = np.arange(0.0, 40, dt)
 
 # th1 and th2 are the initial angles (degrees)
 # w10 and w20 are the initial angular velocities (degrees per second)
-th1 = 120.0
-w1 = 0.0
-th2 = -10.0
-w2 = 0.0
+th11 = 120.0
+w11 = 0.0
+th12 = -10.0
+w12 = 0.0
+
+## TODO adjust the starting positions of the 2nd & 3rd pendulum 
+## very very slightly from pendulum 1 
+## to see if the 2 diverge
+th21 = 120.0 ## starting point of 1st weight
+w21 = 0.1 ## speed of 1st weight
+th22 = -10.0 ## starting point of 2nd wieght
+w22 = 0.0 ## speed of 2nd weight
+
+th31 = 120.0
+w31 = 0.0
+th32 = -10.0
+w32 = 0.5
+
 
 # initial state
-state = np.radians([th1, w1, th2, w2])
+state1 = np.radians([th11, w11, th12, w12])
+state2 = np.radians([th21, w21, th22, w22])
+state3 = np.radians([th31, w31, th32, w32])
 
 # integrate your ODE using scipy.integrate.
-y = integrate.odeint(derivs, state, t)
+y1 = integrate.odeint(derivs, state1, t)
+y2 = integrate.odeint(derivs, state2, t)
+y3 = integrate.odeint(derivs, state3, t)
 
-x1 = L1*sin(y[:, 0])
-y1 = -L1*cos(y[:, 0])
+x11 = L1*sin(y1[:, 0])
+y11 = -L1*cos(y1[:, 0])
+x12 = L2*sin(y1[:, 2]) + x11
+y12 = -L2*cos(y1[:, 2]) + y11
 
-x2 = L2*sin(y[:, 2]) + x1
-y2 = -L2*cos(y[:, 2]) + y1
+x21 = L1*sin(y2[:, 0])
+y21 = -L1*cos(y2[:, 0])
+x22 = L2*sin(y2[:, 2]) + x21
+y22 = -L2*cos(y2[:, 2]) + y21
+                 
+x31 = L1*sin(y3[:, 0])
+y31 = -L1*cos(y3[:, 0])
+x32 = L2*sin(y3[:, 2]) + x31
+y32 = -L2*cos(y3[:, 2]) + y31
 
 fig = plt.figure()
 ax = fig.add_subplot(111, autoscale_on=False, xlim=(-2, 2), ylim=(-2, 2))
@@ -84,9 +111,14 @@ ax.grid()
 ## the ends of each arm of the pendulum
 ## line_p1 is for the first arm, line_p2 is for the 2nd arm 
 
-line, = ax.plot([], [], 'o-', lw=2)
-#line_p2, = ax.plot([], [], '-', lw=1)
-#line_p1, = ax.plot([], [], '-', lw=1)
+line_p12, = ax.plot([], [], '-', lw=2)
+line_p12.set_color(colors[30])
+
+line_p22, = ax.plot([], [], '-', lw=2)
+line_p22.set_color(colors[10])
+
+line_p32, = ax.plot([], [], '-', lw=2)
+line_p32.set_color(colors[40])
 
 time_template = 'time = %.1fs'
 time_text = ax.text(0.05, 0.9, '', transform=ax.transAxes)
@@ -102,29 +134,23 @@ def init():
 
 
 def animate(i):
-    thisx = [0, x1[i], x2[i]]
-    thisy = [0, y1[i], y2[i]]
     
-    p2_x = [x2[:i]]
-    p2_y = [y2[:i]]
     
-    p1_x = [x1[:i]]
-    p1_y = [y1[:i]]
+    p12_x = [x12[max(0, i-10):i]]
+    p12_y = [y12[max(0,i-10):i]]
+    line_p12.set_data(p12_x, p12_y)
     
+    p22_x = [x22[max(0, i-10):i]]
+    p22_y = [y22[max(0,i-10):i]]
+    line_p22.set_data(p22_x, p22_y)
+                 
+    p32_x = [x32[max(0, i-10):i]]
+    p32_y = [y32[max(0,i-10):i]]
+    line_p32.set_data(p32_x, p32_y)
 
-    line.set_data(thisx, thisy)
-    line.set_color(colors[i%50])
     
-#    line_p2.set_data(p2_x, p2_y)
-#    line_p2.set_color(colors[30])
-    
-#    line_p1.set_data(p1_x, p1_y)
-#    line_p1.set_color(colors[20])
-
-
     time_text.set_text(time_template % (i*dt))
     return line, time_text
 
 ani = animation.FuncAnimation(fig, animate, np.arange(1, len(y)),
 interval=200, blit=True, init_func=init)
-
