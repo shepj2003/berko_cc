@@ -130,7 +130,7 @@ def init():
 #    line_p2.set_data([], [])
     
     time_text.set_text('')
-    return line, time_text
+    return line_p12, time_text
 
 
 def animate(i):
