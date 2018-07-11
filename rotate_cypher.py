@@ -7,7 +7,7 @@ def code_simple( word, m, n) :
 def code(words, m, n) : 
   upper_word = words.upper() 
   ordA = ord('A')
-  char_len = ord('Z') - ordA
+  char_len = ord('Z') - ordA + 1
   ord_word = [ord(x)- ordA for x in list(upper_word) ]
   code_word = [' ' if x == -33 else chr( (x+( m*(i%2) ) + ( n*((i+1)%2)) ) %char_len + ordA)  
       for i, x in enumerate( ord_word ) ] 
