@@ -38,3 +38,6 @@ MAX_ITER = 500
 COLMAP = plt.cm.hsv
 ## x = mandelbrot_data = mandelbrot(600, 600, (X-R,X+R ), (Y-R,Y+R),MAX_ITER)
 plt.imshow( x, cmap=COLMAP) 
+fig = plt.gcf()
+fig.set_size_inches(15,15)
+
