@@ -4,21 +4,14 @@ import numpy as np
 LMR = { 'L' : 0, 'M': 1, 'R' : 2}
 TMB = { 'T' : 0, 'M' : 1, 'B' : 2}
 PLAYER = { 1 : 'X', -1 : 'O', 0 : ' '}
-algo_X = None
-algo_O = None
+algo_X = cpu_algo1
+algo_O = cpu_algo2
 SHOW_GRID = True
 
 def init_grid( n ) :
     """
     make a 3x3 grid with zeros in it
     """
-    ## TODO 
-    ## this line will complain when you try to load it becuase 
-    ## numpy is a special library for doing maths that needs to be loaded into 
-    ## python.
-    ## do this by adding the line 
-    ## import numpy as np
-    ## this imports the library and calls it np ... just so don't have to keep typing numpy
     return np.zeros([n,n], dtype = int)
 
 def update_grid( grid, player, move) :
@@ -192,7 +185,7 @@ def cpu_algo_aggressive_defensive( grid, player, algo) :
     
 
 def cpu_algo3 (grid, player) :
-    #### TODO 4
+    #### TODO 3
     ## write your own algorithm
     ## you need to find a way to chose x & y
     ## you need to check that grid[x,y] is currently empty for it to be a valid move
@@ -202,13 +195,14 @@ def cpu_algo3 (grid, player) :
     return 1
     
 def choose_cpu_algo( player ) : 
-    #### TODO 3
+    #### TODO 2
     ## we have defined 4 different algorithms for the computer to decide where to play
     ## they are called 
     ##     cpu_algo1
     ##     cpu_algo2
     ##     cpu_algo_aggressive
     ##     cpu_algo_defensive
+    ## work out what easch algorithm does
     ## change the lines below to control which algorithm to use
     ## this code only has any effect when the player is controlled by the CPU
     ## (see TODO2)
@@ -230,16 +224,16 @@ def human_move( grid, player) :
     return 1
 
 def player_is_human(player) : 
-    #### TODO 2
+    #### TODO 1
     ## once you have managed to get 2 humans to play vs eachother 
     ## try to play one human vs one computer 
     ## or 2 computers vs eachother
     ## you need to modify the lines below to control
     ## whether player 1 is human and/or player 2 is human
     if player == -1 :
-        return False
+        return True
     if player == 1 : 
-        return False
+        return True
     
 def move( grid, player) : 
     if player_is_human(player) :
@@ -267,8 +261,11 @@ def play() :
         return winner
         
     
-        
-
+##         
+## TODO 4
+## instead of playing just 1 game, play a few hundred games between 
+## different algos to see which is the best 
+## try calling the simulate method with different parameters
 def simulate(n, algo_x=cpu_algo1, algo_o = cpu_algo2, show_steps=True) :
     global algo_X, algo_O, SHOW_GRID
     algo_X = algo_x
@@ -287,6 +284,4 @@ def simulate(n, algo_x=cpu_algo1, algo_o = cpu_algo2, show_steps=True) :
             
     print(scores)
     
-    
-    
-
+## to run type play()
