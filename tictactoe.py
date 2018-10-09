@@ -4,8 +4,7 @@ import numpy as np
 LMR = { 'L' : 0, 'M': 1, 'R' : 2}
 TMB = { 'T' : 0, 'M' : 1, 'B' : 2}
 PLAYER = { 1 : 'X', -1 : 'O', 0 : ' '}
-algo_X = None
-algo_O = None
+
 SHOW_GRID = True
 
 def init_grid( n ) :
@@ -284,4 +283,6 @@ def simulate(n, algo_x=cpu_algo1, algo_o = cpu_algo2, show_steps=True) :
             
     print(scores)
     
+algo_X = cpu_algo1
+algo_O = cpu_algo2
 ## to run type play()
